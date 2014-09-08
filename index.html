@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple iOS style Toggle-Switch with CSS3 & jquery</title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="style.css"></head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h3>Simple iOS style Toggle-Switch with CSS3 & jquery</h3>
+			<p>all animation control by css3 translate, really smooth than css-position</p>
+			<p>
+				<a class="btn btn-primary" role="button">download</a>
+			</p>
+		</div>
+
+		<h3>switch off</h3>
+		<div class="toggle-switch toggle-off">
+			<div class="toggle-wrap">
+
+				<div class="toggle-bg-on"></div>
+			</div>
+			<div class="toggle-handler"></div>
+		</div>
+
+		<h3>switch on</h3>
+		<div class="toggle-switch toggle-on">
+			<div class="toggle-wrap">
+
+				<div class="toggle-bg-on"></div>
+			</div>
+			<div class="toggle-handler"></div>
+		</div>
+	</div>
+
+	<script>
+
+	(function($) {
+        $.fn.extend({
+        	toggleSwitch: function(){
+
+
+                $('.toggle-switch').on('click',function(){
+                  if($(this).hasClass('toggle-off')){
+                    $(this).removeClass('toggle-off').addClass('toggle-on')
+                  }else{
+                    $(this).removeClass('toggle-on').addClass('toggle-off')
+                  }
+
+                })
+
+
+            }
+        })
+    })(jQuery)
+	$(document).ready(function(){
+        $('.toggle-switch').toggleSwitch();
+     });
+	</script>
+</body>
+</html>
