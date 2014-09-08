@@ -1,46 +1,64 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Simple-ios-style-toggle-switch-with-css3-jquery by leafiy</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple iOS style Toggle-Switch with CSS3 & jquery</title>
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Simple-ios-style-toggle-switch-with-css3-jquery</h1>
-        <p>all animation control by css3 translate, really smooth than css-position</p>
+	<link rel="stylesheet" href="style.css"></head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h3>Simple iOS style Toggle-Switch with CSS3 & jquery</h3>
+			<p>all animation control by css3 translate, really smooth than css-position</p>
+			<p>
+				<a class="btn btn-primary" role="button">download</a>
+			</p>
+		</div>
 
-        <p class="view"><a href="https://github.com/leafiy/Simple-iOS-style-Toggle-Switch-with-CSS3-jquery">View the Project on GitHub <small>leafiy/Simple-iOS-style-Toggle-Switch-with-CSS3-jquery</small></a></p>
+		<h3>switch off</h3>
+		<div class="toggle-switch toggle-off">
+			<div class="toggle-wrap">
+
+				<div class="toggle-bg-on"></div>
+			</div>
+			<div class="toggle-handler"></div>
+		</div>
+
+		<h3>switch on</h3>
+		<div class="toggle-switch toggle-on">
+			<div class="toggle-wrap">
+
+				<div class="toggle-bg-on"></div>
+			</div>
+			<div class="toggle-handler"></div>
+		</div>
+	</div>
+
+	<script>
+
+	(function($) {
+        $.fn.extend({
+        	toggleSwitch: function(){
 
 
-        <ul>
-          <li><a href="https://github.com/leafiy/Simple-iOS-style-Toggle-Switch-with-CSS3-jquery/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/leafiy/Simple-iOS-style-Toggle-Switch-with-CSS3-jquery/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/leafiy/Simple-iOS-style-Toggle-Switch-with-CSS3-jquery">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="simple-ios-style-toggle-switch-with-css3-jquery" class="anchor" href="#simple-ios-style-toggle-switch-with-css3-jquery"><span class="octicon octicon-link"></span></a>Simple-iOS-style-Toggle-Switch-with-CSS3-jquery</h1>
+                $('.toggle-switch').on('click',function(){
+                  if($(this).hasClass('toggle-off')){
+                    $(this).removeClass('toggle-off').addClass('toggle-on')
+                  }else{
+                    $(this).removeClass('toggle-on').addClass('toggle-off')
+                  }
 
-<p>all animation control by css3 translate, really smooth than css-position</p>
+                })
 
-<p>Demo</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/leafiy">leafiy</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+
+            }
+        })
+    })(jQuery)
+	$(document).ready(function(){
+        $('.toggle-switch').toggleSwitch();
+     });
+	</script>
+</body>
 </html>
